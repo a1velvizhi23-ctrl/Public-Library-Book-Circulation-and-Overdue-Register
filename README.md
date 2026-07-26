@@ -2,7 +2,8 @@
 
 A **production-quality Library Management Dashboard** for tracking book circulation, overdue items, and borrowing statistics. Built with React 19, Vite, and a JSON-based data store. Features a modern, responsive UI with dark mode, analytics charts, and full accessibility support.
 
-![Screenshot Placeholder](./screenshots/dashboard.png)
+**The Screenshots and recordings are given below**
+https://drive.google.com/drive/folders/1RowM2ylbHlcKY0TDG3dTsYXwQg4BqAhM?usp=sharing
 
 ---
 
