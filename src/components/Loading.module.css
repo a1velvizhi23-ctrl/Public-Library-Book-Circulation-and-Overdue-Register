@@ -1,0 +1,110 @@
+.wrapper {
+  padding: var(--space-lg) 0;
+}
+
+.skeletonCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-md);
+}
+
+.skeletonLine {
+  height: 14px;
+  border-radius: 7px;
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    var(--color-bg) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  margin-bottom: var(--space-sm);
+}
+
+.skeletonLineShort {
+  width: 60%;
+}
+
+.skeletonLineMedium {
+  width: 80%;
+}
+
+.skeletonLineLong {
+  width: 100%;
+}
+
+.skeletonBadge {
+  width: 80px;
+  height: 24px;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    var(--color-bg) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  margin-bottom: var(--space-sm);
+}
+
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.skeletonTable {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.skeletonTableHeader {
+  padding: 12px 16px;
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.skeletonTableRow {
+  display: flex;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  gap: var(--space-md);
+}
+
+.skeletonTableRow:last-child {
+  border-bottom: none;
+}
+
+.skeletonCell {
+  flex: 1;
+  height: 14px;
+  border-radius: 7px;
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    var(--color-bg) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonCellSmall {
+  flex: 0.5;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}

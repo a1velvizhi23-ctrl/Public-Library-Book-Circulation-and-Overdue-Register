@@ -1,0 +1,269 @@
+.container {
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 8px 0;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-primary);
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.statusCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.statusBadgeLarge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-md);
+}
+
+.statusReturned {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.statusIssued {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.statusOverdue {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.overdueNumber {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.overdueLabel {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.overdueText {
+  color: var(--color-danger);
+}
+
+.safeText {
+  color: var(--color-success);
+}
+
+.infoCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.infoCardTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.infoValue {
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  text-align: right;
+}
+
+.timeline {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-lg);
+}
+
+.timelineTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.timelineSteps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 var(--space-md);
+}
+
+.timelineSteps::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: var(--color-border);
+  z-index: 0;
+}
+
+.timelineStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.timelineDot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.dotPrimary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.dotSuccess {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.dotDanger {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.timelineDate {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.timelineLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 2px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    grid-template-columns: 1fr;
+  }
+
+  .overdueNumber {
+    font-size: 2.5rem;
+  }
+
+  .timelineSteps {
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: 0;
+  }
+
+  .timelineSteps::before {
+    display: none;
+  }
+
+  .timelineStep {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+
+  .timelineDot {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .timelineDate {
+    text-align: left;
+  }
+
+  .timelineLabel {
+    text-align: left;
+  }
+}

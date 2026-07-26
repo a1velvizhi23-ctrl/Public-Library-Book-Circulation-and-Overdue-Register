@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-lg);
+  text-align: center;
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+.icon {
+  font-size: 4rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  opacity: 0.5;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.message {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,66 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-md) 0;
+  flex-wrap: wrap;
+}
+
+.pageBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.pageBtn:hover:not(:disabled):not(.active) {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+
+.pageBtn.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0 var(--space-sm);
+  white-space: nowrap;
+}
+
+.ellipsis {
+  color: var(--color-text-muted);
+  padding: 0 4px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .pageBtn {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 0.8rem;
+  }
+
+  .pageInfo {
+    font-size: 0.75rem;
+  }
+}

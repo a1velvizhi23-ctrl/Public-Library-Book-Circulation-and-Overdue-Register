@@ -1,0 +1,250 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navbar-height);
+  padding: 0 var(--space-lg);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  color: var(--color-white);
+  font-size: 1.2rem;
+}
+
+.brandName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.navLink:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.navLink.active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 1.2rem;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.themeToggle:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.githubLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 1.3rem;
+  transition: all var(--transition-fast);
+}
+
+.githubLink:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+.hamburger:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-md);
+  z-index: 99;
+  animation: fadeInUp var(--transition-normal) ease;
+}
+
+.mobileMenu.open {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.mobileNavLink:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.mobileNavLink.active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 var(--space-md);
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .brandName {
+    font-size: 1rem;
+  }
+
+  .mobileShortcuts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+}
+
+.mobileShortcuts {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.shortcutHint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.shortcutHint kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  font-family: inherit;
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+}

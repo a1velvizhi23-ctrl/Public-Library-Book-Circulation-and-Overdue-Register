@@ -1,0 +1,123 @@
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 14px 10px 42px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.searchInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+}
+
+.searchInput:focus ~ .searchIcon {
+  color: var(--color-primary);
+}
+
+.clearButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.clearButton:hover {
+  background: var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  max-height: 240px;
+  overflow-y: auto;
+  animation: fadeIn var(--transition-fast) ease;
+}
+
+.suggestionItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.suggestionItem:hover,
+.suggestionItem.highlighted {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.suggestionIcon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.suggestionText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .searchWrapper {
+    max-width: 100%;
+  }
+}
